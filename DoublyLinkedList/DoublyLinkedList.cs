@@ -130,7 +130,7 @@ namespace DoublyLinkedList
                 Node<T> p = this.head;
                 int counter = 1;
 
-                while (p != null && counter < this.Length) {
+                while (p != null && counter <= this.length / 2) {
                     p = p.Next;
                     counter++;
 
@@ -140,7 +140,7 @@ namespace DoublyLinkedList
                 Node<T> p = this.tail;
                 int counter = this.length;
 
-                while (p != null && counter > 1) {
+                while (p != null && counter > this.length / 2) {
                     p = p.Previous;
                     counter--;
 
