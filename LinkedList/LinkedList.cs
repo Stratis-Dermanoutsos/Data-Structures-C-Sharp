@@ -46,6 +46,27 @@ namespace LinkedList
             }
             Console.Write("\n");
         }
+        
+        // Get specific Node
+        public Node<T> GetAt(int index) // O(n)
+        {
+            /* If it's the first */
+            if (index == 1) return this.head; 
+
+            /* If not, search for our index */
+            Node<T> p = this.head;
+            int counter = 1;
+
+            while (p != null && counter < this.Length) {
+                p = p.Next;
+                counter++;
+
+                if (counter == index) return p;
+            }
+
+            /* If it was not found, return null */
+            return null;
+        }
 
         // Add the last node of the chain
         public void Append(T value) // O(1)
