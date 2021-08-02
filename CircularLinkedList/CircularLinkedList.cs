@@ -28,7 +28,7 @@ namespace Data_Structures_C_Sharp.CircularLinked
             }
         }
 
-        /* Add a node at a set index of our SinglyLinkedList */
+        /* Add a node at a set index of our CircularLinkedList */
         public void Insert(int value, int index)
         {
             if (this.Head == null || index < 1) {
