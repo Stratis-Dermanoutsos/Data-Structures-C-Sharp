@@ -3,6 +3,7 @@ using Data_Structures_C_Sharp.SinglyLinked;
 using Data_Structures_C_Sharp.DoublyLinked;
 using Data_Structures_C_Sharp.CircularLinked;
 using Data_Structures_C_Sharp.Q;
+using Data_Structures_C_Sharp.Stacks;
 
 namespace Data_Structures_C_Sharp
 {
@@ -60,9 +61,24 @@ namespace Data_Structures_C_Sharp
             queue.Enqueue(11);
             queue.Enqueue(13);
             queue.Enqueue(17);
-            queue.Dequeue();
+            Console.WriteLine(queue.Dequeue().Data + " dequeued from queue.");
             queue.Dequeue();
             Console.WriteLine($"Queue: {queue}");
+
+            Console.WriteLine(Environment.NewLine);
+
+            Stack stack = new Stack();
+            stack.Push(3);
+            stack.Push(5);
+            stack.Push(7);
+            Console.WriteLine(stack.IsEmpty() ? "Stack is empty" : "Stack is not empty");
+            stack.Push(11);
+            stack.Push(13);
+            stack.Push(17);
+            Console.WriteLine(stack.Top.Data + " peeked from stack.");
+            Console.WriteLine(stack.Pop().Data + " popped from stack.");
+            stack.Pop();
+            Console.WriteLine($"Stack: {stack}");
         }
     }
 }
