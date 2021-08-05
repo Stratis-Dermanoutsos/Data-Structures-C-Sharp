@@ -2,6 +2,7 @@
 using Data_Structures_C_Sharp.SinglyLinked;
 using Data_Structures_C_Sharp.DoublyLinked;
 using Data_Structures_C_Sharp.CircularLinked;
+using Data_Structures_C_Sharp.Q;
 
 namespace Data_Structures_C_Sharp
 {
@@ -49,6 +50,19 @@ namespace Data_Structures_C_Sharp
             listCirce.Insert(3, 3);
             listCirce.Preppend(9);
             Console.WriteLine($"Circular Linked List: {listCirce}");
+
+            Console.WriteLine(Environment.NewLine);
+
+            Queue queue = new Queue();
+            queue.Enqueue(3);
+            queue.Enqueue(5);
+            queue.Enqueue(7);
+            queue.Enqueue(11);
+            queue.Enqueue(13);
+            queue.Enqueue(17);
+            queue.Dequeue();
+            queue.Dequeue();
+            Console.WriteLine($"Queue: {queue}");
         }
     }
 }
