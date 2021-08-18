@@ -4,6 +4,7 @@ using Data_Structures_C_Sharp.DoublyLinked;
 using Data_Structures_C_Sharp.CircularLinked;
 using Data_Structures_C_Sharp.Q;
 using Data_Structures_C_Sharp.Stacks;
+using Data_Structures_C_Sharp.BST;
 
 namespace Data_Structures_C_Sharp
 {
@@ -79,6 +80,22 @@ namespace Data_Structures_C_Sharp
             Console.WriteLine(stack.Pop().Data + " popped from stack.");
             stack.Pop();
             Console.WriteLine($"Stack: {stack}");
+
+            Console.WriteLine(Environment.NewLine);
+
+            BinarySearchTree bst = new BinarySearchTree();
+            bst.Insert(50);
+            bst.Insert(30);
+            bst.Insert(20);
+            bst.Insert(40);
+            bst.Insert(70);
+            bst.Insert(60);
+            bst.Insert(80);
+            bst.Remove(60);
+            bst.Remove(30);
+            Console.WriteLine($"Value 40 was {((bst.Search(40) == null) ? "not " : string.Empty)}found.");
+            Console.WriteLine($"Value 30 was {((bst.Search(30) == null) ? "not " : string.Empty)}found.");
+            Console.WriteLine($"Binary Search Tree (inorder): {bst}");
         }
     }
 }
