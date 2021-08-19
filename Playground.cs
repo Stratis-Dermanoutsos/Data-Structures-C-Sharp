@@ -96,6 +96,8 @@ namespace Data_Structures_C_Sharp
             Console.WriteLine($"Value 40 was {((bst.Search(40) == null) ? "not " : string.Empty)}found.");
             Console.WriteLine($"Value 30 was {((bst.Search(30) == null) ? "not " : string.Empty)}found.");
             Console.WriteLine($"Binary Search Tree (inorder): {bst}");
+            Console.WriteLine($"Binary Search Tree (preorder): {bst.Preorder()}");
+            Console.WriteLine($"Binary Search Tree (postorder): {bst.Postorder()}");
         }
     }
 }

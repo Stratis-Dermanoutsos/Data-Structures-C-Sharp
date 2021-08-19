@@ -116,6 +116,42 @@ namespace Data_Structures_C_Sharp.BST
         }
         #endregion
 
+        #region Preorder Traversal
+        /* Recursively traverses the Binary Search Tree */
+        private string Preorder(Node root)
+        {
+            if (root == null)
+                return string.Empty;
+
+            StringBuilder result = new StringBuilder($"{root.Data} {Preorder(root.LeftChild)} {Preorder(root.RightChild)}");
+            return result.ToString();
+        }
+
+        /* Method to be called for preorder traversal */
+        public string Preorder()
+        {
+            return Preorder(this.Root);
+        }
+        #endregion
+
+        #region Postorder Traversal
+        /* Recursively traverses the Binary Search Tree */
+        private string Postorder(Node root)
+        {
+            if (root == null)
+                return string.Empty;
+
+            StringBuilder result = new StringBuilder($"{Postorder(root.LeftChild)} {Postorder(root.RightChild)} {root.Data}");
+            return result.ToString();
+        }
+
+        /* Method to be called for postorder traversal */
+        public string Postorder()
+        {
+            return Postorder(this.Root);
+        }
+        #endregion
+
         public override string ToString()
         {
             return Inorder();
