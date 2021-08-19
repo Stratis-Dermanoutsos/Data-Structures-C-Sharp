@@ -152,6 +152,48 @@ namespace Data_Structures_C_Sharp.BST
         }
         #endregion
 
+        #region Level Order Traversal
+        /* Recursively prints a level of the Binary Search Tree */
+        private string LevelOrderCurrentLevel(Node root, int level)
+        {
+            if (root == null)
+                return string.Empty;
+
+            if (level == 1)
+                return $"{root.Data} ";
+            else if (level > 1)
+                return $"{LevelOrderCurrentLevel(root.LeftChild, level - 1)} {LevelOrderCurrentLevel(root.RightChild, level - 1)}";
+
+            return string.Empty;
+        }
+
+        /* Compute the height of the Binary Search Tree */
+        private int Height(Node root)
+        {
+            if (root == null)
+                return 0;
+
+            /* Compute height of each subtree */
+            int leftHeight = Height(root.LeftChild);
+            int rightHeight = Height(root.RightChild);
+            
+            /* Use the larger one */
+            return ((leftHeight > rightHeight) ? leftHeight : rightHeight) + 1;
+        }
+
+        /* Method to be called for level order traversal */
+        public string LevelOrder()
+        {
+            StringBuilder result = new StringBuilder();
+            int h = Height(this.Root);
+
+            for (int i = 1; i <= h; i++)
+                result.Append(LevelOrderCurrentLevel(this.Root, i));
+
+            return result.ToString();
+        }
+        #endregion
+
         public override string ToString()
         {
             return Inorder();
