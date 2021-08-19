@@ -1,6 +1,6 @@
 ﻿namespace Data_Structures_C_Sharp.BST
 {
-    class Node
+    public class Node
     {
         public int Data { get; set; }
         public Node LeftChild { get; set; }

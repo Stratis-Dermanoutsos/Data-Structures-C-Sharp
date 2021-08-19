@@ -99,6 +99,11 @@ namespace Data_Structures_C_Sharp
             Console.WriteLine($"Binary Search Tree (preorder): {bst.Preorder()}");
             Console.WriteLine($"Binary Search Tree (postorder): {bst.Postorder()}");
             Console.WriteLine($"Binary Search Tree (level order): {bst.LevelOrder()}");
+            bst.Invert();
+            Console.WriteLine($"Inverted Binary Search Tree (inorder): {bst}");
+            Console.WriteLine($"Inverted Binary Search Tree (preorder): {bst.Preorder()}");
+            Console.WriteLine($"Inverted Binary Search Tree (postorder): {bst.Postorder()}");
+            Console.WriteLine($"Inverted Binary Search Tree (level order): {bst.LevelOrder()}");
         }
     }
 }

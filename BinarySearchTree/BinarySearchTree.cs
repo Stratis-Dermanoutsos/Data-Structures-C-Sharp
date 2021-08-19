@@ -2,7 +2,7 @@
 
 namespace Data_Structures_C_Sharp.BST
 {
-    class BinarySearchTree
+    public class BinarySearchTree
     {
         private Node Root { get; set; }
 
@@ -191,6 +191,27 @@ namespace Data_Structures_C_Sharp.BST
                 result.Append(LevelOrderCurrentLevel(this.Root, i));
 
             return result.ToString();
+        }
+        #endregion
+
+        #region Invert the Tree
+        private void Invert(Node root)
+        {
+            if (root == null)
+                return;
+
+            Node temp = root.RightChild;
+            root.RightChild = root.LeftChild;
+            root.LeftChild = temp;
+
+            Invert(root.LeftChild);
+
+            Invert(root.RightChild);
+        }
+
+        public void Invert()
+        {
+            Invert(this.Root);
         }
         #endregion
 
