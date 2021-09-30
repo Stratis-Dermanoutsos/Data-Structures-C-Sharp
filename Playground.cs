@@ -5,6 +5,7 @@ using Data_Structures_C_Sharp.CircularLinked;
 using Data_Structures_C_Sharp.Q;
 using Data_Structures_C_Sharp.Stacks;
 using Data_Structures_C_Sharp.BST;
+using Data_Structures_C_Sharp.AVL;
 
 namespace Data_Structures_C_Sharp
 {
@@ -104,6 +105,22 @@ namespace Data_Structures_C_Sharp
             Console.WriteLine($"Inverted Binary Search Tree (preorder): {bst.Preorder()}");
             Console.WriteLine($"Inverted Binary Search Tree (postorder): {bst.Postorder()}");
             Console.WriteLine($"Inverted Binary Search Tree (level order): {bst.LevelOrder()}");
+
+            Console.WriteLine(Environment.NewLine);
+
+            AVLTree avl = new AVLTree();
+            avl.Insert(10);
+            avl.Insert(20);
+            avl.Insert(30);
+            avl.Insert(40);
+            avl.Insert(50);
+            avl.Insert(25);
+            avl.Remove(10);
+            Console.WriteLine($"AVL Tree (inorder): {avl}");
+            Console.WriteLine($"AVL Tree (preorder): {avl.Preorder()}");
+            Console.WriteLine($"AVL Tree (postorder): {avl.Postorder()}");
+            Console.WriteLine($"AVL Tree (level order): {avl.LevelOrder()}");
+
         }
     }
 }

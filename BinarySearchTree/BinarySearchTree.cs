@@ -90,13 +90,11 @@ namespace Data_Structures_C_Sharp.BST
         }
         #endregion
 
-        #region Minimum value
         /* Recursively finds and returns the node with the minimum value of the Binary Search Tree */
         Node Min(Node root)
         {
             return (root == null) ? null : (root.LeftChild == null) ? root : Min(root.LeftChild);
         }
-        #endregion
 
         #region Inorder Traversal
         /* Recursively traverses the Binary Search Tree */
